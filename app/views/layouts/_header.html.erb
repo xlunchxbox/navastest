@@ -1,0 +1,36 @@
+<br/>
+					<div class="row">
+					    <div class="large-3 columns">
+					      <h1><%= image_tag "navaslogo.png" %></h1>
+					    </div>
+					    <div class="large-9 columns">
+					      <ul class="button-group right">
+					        <%= link_to "Home", root_path, :class => 'button' %>
+					        <%= link_to "Contact us", new_contact_form_path, :class => 'button' %>
+							<% if user_signed_in? %>
+							<%= link_to "New Moonwalk", new_moonwalk_path, :class => 'button' %>
+							<%= link_to "Requests", contact_forms_path, :class => 'button' %>
+							<%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'button' %>
+							<% else %>
+							<li><%= link_to "Sign in", new_user_session_path, :class => 'button'  %></li>
+							<% end %>
+					      </ul>
+					    </div>
+						
+					  </div>
+					  
+					  <div class ="row">
+						  <div class="large-12 columns">
+							  <% if flash[:notice] %>
+							  <div data-alert class="alert-box success">
+								  <ul><li><i class="general foundicon-checkmark"></i> <%= flash[:notice] %><a href="#" class="close">&times;</a></li></ul>
+							  </div>
+							  <% end %>
+							  <% if flash[:alert] %>
+							  <div data-alert class="alert-box alert">
+								  <ul><li><i class="general foundicon-error"></i> <%= flash[:alert] %><a href="#" class="close">&times;</a></li></ul>
+							  </div>
+							  <% end %>
+						  </div>
+					  </div>
+
