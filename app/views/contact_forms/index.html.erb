@@ -1,2 +1,29 @@
-<h1>ContactForms#index</h1>
-<p>Find me in app/views/contact_forms/index.html.erb</p>
+<div class="large-8 columns">
+	<div class="row">
+		<div class="large-4 large-12 columns">
+<h1>Contact Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th width="200">Email</th>
+      <th width="150">Name</th>
+      <th width="200">Date</th>
+	  <th>Show</th>
+	  <th>Delete</th>
+	  
+    </tr>
+  </thead>
+  <tbody>
+	  <% @contact_forms.each do |contact_form| %>
+    <tr>
+      <td><%= contact_form.email %></td>
+      <td><%= contact_form.name %></td>
+      <td><%= contact_form.created_at.strftime("%a, %b, %d, %Y  %I:%M:%S %p") %></td>
+	  <td><%= link_to 'Show', contact_form_path(contact_form) %></td>
+	  <td><%= link_to 'Delete', contact_form, method: :delete%></td>
+    </tr>
+	<% end %>
+  </tbody>
+</table>
+

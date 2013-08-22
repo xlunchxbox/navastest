@@ -1,0 +1,97 @@
+<%= form_for(@contact_form) do |f| %>
+  <% if @contact_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact_form.errors.count, "error") %> prohibited this contact_form from being saved:</h2>
+
+      <ul>
+      <% @contact_form.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <form>
+	  <div class="row">
+		  <div class="small-8">
+			  <div class="row">
+				  <div class="small-3 columns">
+					  <label for="right-label" class="right inline subheader">
+						  <h2><small><%= f.label :email %></small></h2><br>
+					  </label>
+				  </div>
+				  <div class="small-9 columns">
+					  <%= f.text_field :email %>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+	  
+	  <div class="row">
+		  <div class="small-8">
+			  <div class="row">
+				  <div class="small-3 columns">
+					  <label for="right-label" class="right inline subheader">
+						  <h2><small><%= f.label :name %></small></h2><br>
+					  </label>
+				  </div>
+				  <div class="small-9 columns">
+					  <%= f.text_field :name %>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+	  
+	  <div class="row">
+		  <div class="small-8">
+			  <div class="row">
+				  <div class="small-3 columns">
+					  <label for="right-label" class="right inline subheader">
+						  <h2><small><%= f.label :phone %></small></h2><br>
+					  </label>
+				  </div>
+				  <div class="small-9 columns">
+					  <%= f.text_field :phone %>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+	  
+	  
+	  
+	  
+	  <div class="row">
+		  <div class="small-8">
+			  <div class="row">
+				  <div class="small-3 columns">
+					  <label for="right-label" class="right inline subheader">
+						  <h2><small><%= f.label :message %></small></h2><br>
+						  
+					  </label>
+				  </div>
+				  <div class="small-9 columns">
+					  <%= f.text_area :message %><br/>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+	  
+	  
+	  
+
+	  <div class="row">
+		  <div class="small-8">
+			  <div class="row">
+				  <div class="small-3 columns">
+				  </div>
+				  <div class="small-9 columns">
+					  <%= f.submit 'Submit', :class => 'button radius large expand' %>
+				  </div>
+			  </div>
+		  </div>
+	  </div>  
+	</form>
+	
+<% end %>
+
+
