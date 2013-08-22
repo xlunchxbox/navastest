@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130822192027) do
+ActiveRecord::Schema.define(version: 20130822193142) do
+
+  create_table "contact_forms", force: true do |t|
+    t.string   "email"
+    t.string   "name"
+    t.string   "phone"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "moonwalks", force: true do |t|
+    t.string   "type_of"
+    t.integer  "length"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "cost"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
