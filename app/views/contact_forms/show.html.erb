@@ -1,7 +1,7 @@
 <div class="large-8 columns">
 	<div class="row">
 		<div class="large-4 large-12 columns">
-			<h1 class="subheader">Email:</h1></large>
+			<!-- <h1 class="subheader">Email:</h1></large>
 			<h4 class="subheader"><%= @contact_form.email %></h4>
 			
 			<h1 class="subheader">Name:</h1>
@@ -13,6 +13,21 @@
 			
 			<h1 class="subheader">Message:</h1>
 			<h4 class="subheader"><%= @contact_form.message %></h4>
+			 -->
+			
+			
+			
+			<h4 class="subheader">Email: <%= @contact_form.email %></h4></large>
+			
+			<h4 class="subheader">Name: <%= @contact_form.name %></h4>
+			
+			<h4 class="subheader">Phone: <%= @contact_form.phone
+			       "(#{@contact_form.phone.to_s[0..2]}) #{@contact_form.phone.to_s[3..5]}-#{@contact_form.phone.to_s[6..9]}" %></h4>
+			
+			<h4 class="subheader">Message: <%= @contact_form.message %></h4>
+			
+			
 
 </br>
+
 <%= link_to 'Back', contact_forms_path , class: "button radius large"  %>
