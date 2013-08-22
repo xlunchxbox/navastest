@@ -1,11 +1,11 @@
 class Moonwalk < ActiveRecord::Base
   # attr_accessible :image
-  #mount_uploader :image, ImageUploader
-  validates_presence_of :name, :type_of_moonwalk, :length, :width, :height, :cost, :description
-  #validates_presence_of :image, :unless => lambda {remote_image_url.blank?}
+  mount_uploader :image, ImageUploader
+  validates_presence_of :name, :type_of, :length, :width, :height, :cost, :description
+  validates_presence_of :image, :unless => lambda {remote_image_url.blank?}
   validates :cost, :numericality => { :greater_than_or_equal_to => 0 }
   
-  #validate :one_image
+  validate :one_image
   
   private 
   def one_image

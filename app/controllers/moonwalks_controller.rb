@@ -71,6 +71,6 @@ class MoonwalksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def moonwalk_params
-      params.require(:moonwalk).permit(:type_of_moonwalk, :length, :width, :height, :cost, :description, :image, :remote_image_url, :name)
+      params.require(:moonwalk).permit(:type_of, :length, :width, :height, :cost, :description, :image, :remote_image_url, :name)
     end
 end

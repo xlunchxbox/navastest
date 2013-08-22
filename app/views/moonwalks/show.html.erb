@@ -1,2 +1,35 @@
-<h1>Moonwalks#show</h1>
-<p>Find me in app/views/moonwalks/show.html.erb</p>
+<!-- <p id="notice"><%= notice %></p> -->
+
+<div class="large-8 columns">
+	<div class="row">
+		<div class="large-4 large-12 columns">
+
+		<h1 class="subheader"><large><%= @moonwalk.name %></h1></large>
+		<%= image_tag @moonwalk.image_url.to_s %>
+
+<p>
+  <h1 class="subheader">Type:</h1></large>
+  <h4 class="subheader"><%= @moonwalk.type_of %></h4></large>
+</p>
+
+<p>
+  <h1 class="subheader">Dimensions (LxWxH)</h1></large>
+  <h4 class="subheader"><%= @moonwalk.length %>x<%= @moonwalk.width %>x<%= @moonwalk.height %></h4></large>
+</p>
+
+<p>
+  <h1 class="subheader">Cost per day:</h1></large>
+  <h4 class="subheader"><%= @moonwalk.cost %></h4></large>
+</p>
+
+<p>
+ <h1 class="subheader">Description:</h1></large>
+ <h4 class="subheader"><%= @moonwalk.description %></h4></large>
+</p>
+
+<% if user_signed_in? %>
+	<%= link_to 'New', new_moonwalk_path , class: "button radius large"  %>
+	<%= link_to 'Edit', edit_moonwalk_path(@moonwalk), class: "button radius large" %> 
+<% end %>
+<%= link_to 'Back', moonwalks_path , class: "button radius large"  %>
+

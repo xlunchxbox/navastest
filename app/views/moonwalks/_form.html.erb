@@ -1,0 +1,162 @@
+<%= form_for @moonwalk, :html => {:multipart => true} do |f| %>
+  <% if @moonwalk.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@moonwalk.errors.count, "error") %> prohibited this moonwalk from being saved:</h2>
+
+      <ul>
+      <% @moonwalk.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form>
+      <div class="row">
+        <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right inline subheader">
+  				<h2><small><%= f.label :name %></small></h2><br>
+  			</label>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :name %>
+            </div>
+          </div>
+        </div>
+      </div>
+	  
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline subheader">
+				<h2><small><%= f.label :type_of, "Kind" %></small></h2><br>
+			</label>
+          </div>
+          <div class="small-9 columns">
+            <%= f.text_field :type_of %>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">
+				<h2><small><%= f.label :length %></h2></small><br>
+			</label>
+          </div>
+          <div class="small-9 columns">
+			  <%= f.select :length, options_for_select(list_of_sizes) %>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">
+				<h2><small><%= f.label :width %></h2></small><br>
+			</label>
+          </div>
+          <div class="small-9 columns">
+            <%= f.select :width, options_for_select(list_of_sizes) %>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">
+				<h2><small><%= f.label :height %></h2></small><br>
+			</label>
+          </div>
+          <div class="small-9 columns">
+            <%= f.select :height, options_for_select(list_of_sizes) %>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">
+				<h2><small><%= f.label :cost %></h2></small><br>
+			</label>
+          </div>
+          <div class="small-9 columns">
+            <%= f.number_field :cost %>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">
+				<h2><small><%= f.label :description %></h2></small><br>
+			</label>
+          </div>
+          <div class="small-9 columns">
+            <%= f.text_area :description %><br/>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">
+				<h2><small><%= f.label :image %></h2></small><br>
+			</label>
+          </div>
+          <div class="small-9 columns">
+            <%= f.file_field :image, :class => "subheader" %>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">
+				<h2><small><%= f.label :remote_image_url, "URL" %></h2></small><br>
+			</label>
+          </div>
+          <div class="small-9 columns">
+            <%= f.text_field :remote_image_url %>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+          </div>
+          <div class="small-9 columns">
+            <%= f.submit 'Submit', :class => 'button radius large expand' %>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </form>
+<% end %>
