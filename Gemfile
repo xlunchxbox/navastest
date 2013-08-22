@@ -11,6 +11,8 @@ gem 'uglifier'
 gem 'compass-rails' # you need this or you get an err
 gem 'zurb-foundation', '~> 4.0.0'
 
+gem 'devise', '3.0.0.rc'
+
 #This gem will be used for the database on heroku
 group :production do
   gem 'pg'
