@@ -8,6 +8,7 @@ module ApplicationHelper
   end
   
   def moonwalk_type
-    %w[Water Non-water]
+    type = %w[Water Non-water]
+    type
   end
 end
